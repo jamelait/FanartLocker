@@ -1,0 +1,51 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="FanartLocker.Page1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+    
+    <!--<phone:PhoneApplicationPage.Resources>
+        <vm:ShortTimeSpanConverter x:Key="ShortTimeSpanConverter"/>
+        --><!--<vm:IntervalPageViewModel x:Key="ViewModel"></vm:IntervalPageViewModel>--><!--
+    </phone:PhoneApplicationPage.Resources>-->
+    
+    <!--LayoutRoot est la grille racine où tout le contenu de la page est placé-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--{Binding Path=LocalizedResources.IntervalTitle, Source={StaticResource LocalizedStrings}}-->
+        <!--TitlePanel contient le nom de l'application et le titre de la page-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.MainPageTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - placez tout contenu supplémentaire ici-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ScrollViewer HorizontalAlignment="Left" VerticalAlignment="Top">
+            <toolkit:WrapPanel Orientation="Horizontal" Background="Transparent" x:Name="ThumbnailPanel">
+                
+                <!--<phone:LongListSelector x:Name="List" Background="Gray"  HorizontalAlignment="Left" Height="476" VerticalAlignment="Top" Width="456" Margin="0,0,-356,-376"/>-->
+                <!--<Image Source="/Assets/PanoramaBackground.png" Width="80" Height="150" Margin="188,0"/>-->
+            </toolkit:WrapPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <!--<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/feature.settings.png"></shell:ApplicationBarIconButton>-->
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>
