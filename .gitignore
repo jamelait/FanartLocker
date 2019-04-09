@@ -2,7 +2,6 @@ packages/
 bin/
 obj/
 PerfLogs/
-Properties/
 FanartLocker.csproj.user
 FanartLocker.suo
 FanartLocker.v12.suo
